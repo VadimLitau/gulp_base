@@ -128,14 +128,6 @@ gulp.task("images:dev", function () {
       .pipe(gulp.dest("./build/img/"))
   );
 });
-//таск для копирования шрифтов
-gulp.task("fonts:dev", function () {
-  // берем все файлы из всех папок по указанному пути и сохраняем в дест
-  return gulp
-    .src("./src/fonts/**/*")
-    .pipe(changed("./build/fonts/"))
-    .pipe(gulp.dest("./build/fonts/"));
-});
 //таск для копирования файлов. Настраивается по аналогии шрифтов и картинок
 gulp.task("files:dev", function () {
   // берем все файлы из всех папок по указанному пути и сохраняем в дест
@@ -164,7 +156,6 @@ gulp.task("watch:dev", function () {
   gulp.watch("./src/scss/**/*.scss", gulp.parallel("sass:dev"));
   gulp.watch("./src/**/*.html", gulp.parallel("html:dev"));
   gulp.watch("./src/img/**/*", gulp.parallel("images:dev"));
-  gulp.watch("./src/fonts/**/*", gulp.parallel("fonts:dev"));
   gulp.watch("./src/files/**/*", gulp.parallel("files:dev"));
   gulp.watch("./src/js/**/*.js", gulp.parallel("js:dev"));
 });

@@ -174,14 +174,7 @@ gulp.task("images:docs", function () {
     )
     .pipe(gulp.dest("./docs/img/"));
 });
-//таск для копирования шрифтов
-gulp.task("fonts:docs", function () {
-  // берем все файлы из всех папок по указанному пути и сохраняем в дест
-  return gulp
-    .src("./src/fonts/**/*")
-    .pipe(changed("./docs/fonts/"))
-    .pipe(gulp.dest("./docs/fonts/"));
-});
+
 //таск для копирования файлов. Настраивается по аналогии шрифтов и картинок
 gulp.task("files:docs", function () {
   // берем все файлы из всех папок по указанному пути и сохраняем в дест
