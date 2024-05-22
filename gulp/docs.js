@@ -89,16 +89,7 @@ gulp.task("html:docs", function () {
           ],
         })
       )
-      // автоподключение webp в html и добавление изображений под ретину
-      .pipe(
-        webpHTML({
-          extensions: ["jpg", "jpeg", "png", "gif", "webp"],
-          retina: {
-            1: "",
-            2: "@2x",
-          },
-        })
-      )
+     
       // минимазатор html
       .pipe(htmlclean())
       //настройки сохранения файлов
